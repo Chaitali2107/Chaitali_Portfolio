@@ -17,6 +17,11 @@ body {
   line-height: 1.6;
 }
 
+/* FIX: Anchor scroll offset for fixed navbar */
+section {
+  scroll-margin-top: 100px;
+}
+
 /* ===========================
    NAVBAR
 =========================== */
@@ -29,7 +34,7 @@ body {
   width: 100%;
   top: 0;
   z-index: 100;
-  background: rgba(13, 17, 23, 0.9);
+  background: rgba(13, 17, 23, 0.95);
   backdrop-filter: blur(10px);
 }
 
@@ -51,7 +56,6 @@ body {
   font-weight: bold;
   position: relative;
   transition: 0.3s;
-  font-size: 15px;
 }
 
 .nav-links a::after {
@@ -120,7 +124,6 @@ body {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  display: inline-block;
   transition: 0.4s;
 }
 
@@ -159,7 +162,6 @@ body {
   background: #7c3aed;
   display: block;
   margin: 10px auto 0;
-  border-radius: 2px;
 }
 
 .section-desc {
@@ -185,17 +187,15 @@ body {
   border-radius: 12px;
   font-weight: bold;
   transition: 0.3s;
-  cursor: pointer;
 }
 
 .skill:hover {
   background: linear-gradient(135deg, #7c3aed, #9d4edd);
   transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(124, 58, 237, 0.3);
 }
 
 /* ===========================
-   TIMELINE (Experience/Education)
+   TIMELINE
 =========================== */
 .timeline {
   display: grid;
@@ -209,7 +209,6 @@ body {
   padding: 25px;
   border-radius: 12px;
   position: relative;
-  transition: 0.4s;
 }
 
 .timeline-item::before {
@@ -220,12 +219,6 @@ body {
   width: 6px;
   height: 100%;
   background: #7c3aed;
-  border-radius: 3px;
-}
-
-.timeline-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.4);
 }
 
 .date {
@@ -250,7 +243,6 @@ body {
   padding: 25px;
   border-radius: 15px;
   transition: 0.4s;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   position: relative;
 }
 
@@ -259,22 +251,11 @@ body {
   position: absolute;
   top: 15px;
   right: 15px;
-  font-size: 24px;
 }
 
 .cert-card:hover {
-  transform: translateY(-8px);
   background: linear-gradient(135deg, #7c3aed, #9d4edd);
-}
-
-.cert-card h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.cert-card p {
-  font-size: 14px;
-  color: #cccccc;
+  transform: translateY(-6px);
 }
 
 /* ===========================
@@ -295,12 +276,7 @@ body {
 }
 
 .project-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 15px 25px rgba(124, 58, 237, 0.5);
-}
-
-.project-card p {
-  color: #cccccc;
+  transform: translateY(-6px);
 }
 
 /* ===========================
@@ -324,12 +300,10 @@ body {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  transition: 0.4s;
 }
 
 .contact-card:hover {
   background: linear-gradient(135deg, #7c3aed, #9d4edd);
-  transform: translateY(-5px);
 }
 
 /* ===========================
@@ -357,9 +331,13 @@ footer {
    MOBILE RESPONSIVE
 =========================== */
 @media (max-width: 768px) {
+  section {
+    scroll-margin-top: 130px;
+  }
+
   .navbar {
-    padding: 15px 20px;
     flex-direction: column;
+    padding: 15px 20px;
   }
 
   .nav-links {
@@ -416,5 +394,6 @@ footer {
 
   .btn {
     width: 100%;
+    text-align: center;
   }
 }
